@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import {
   ProfileCard,
   ProfileData,
@@ -29,18 +31,30 @@ export const Profile = ({
 
       <ProfileList>
         <ProfileItem>
-          <ProfileStat class="label">Followers</ProfileStat>
-          <ProfileData class="quantity">{followers}</ProfileData>
+          <ProfileStat>Followers</ProfileStat>
+          <ProfileData>{followers}</ProfileData>
         </ProfileItem>
         <ProfileItem>
-          <ProfileStat class="label">Views</ProfileStat>
-          <ProfileData class="quantity">{views}</ProfileData>
+          <ProfileStat>Views</ProfileStat>
+          <ProfileData>{views}</ProfileData>
         </ProfileItem>
         <ProfileItem>
-          <ProfileStat class="label">Likes</ProfileStat>
-          <ProfileData class="quantity">{likes}</ProfileData>
+          <ProfileStat>Likes</ProfileStat>
+          <ProfileData>{likes}</ProfileData>
         </ProfileItem>
       </ProfileList>
     </ProfileCard>
   );
+};
+
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.exact({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
