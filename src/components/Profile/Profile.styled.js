@@ -10,6 +10,7 @@ export const ProfileCard = styled.div`
 export const ProfileDescr = styled.div`
   padding-top: 16px;
   padding-bottom: 32px;
+  border-bottom: 1px rgba(0, 0, 0, 0.12) solid;
 `;
 
 export const ProfileImg = styled.img`
